@@ -73,7 +73,7 @@ int main()
 #endif
 
 /* 代码规范1: 一个函数尽量不要超过80行 最多不要超过120行. */
-#if 0
+#if 1
     /* 坑1: 每一个case都需要有break; */
     int choice = 0;
     printf("请输入你的选项:");
