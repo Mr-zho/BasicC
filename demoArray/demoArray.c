@@ -53,7 +53,7 @@ int main()
         printf("array[%d] = %d\n", idx, array[idx]);
     }
 #endif
-    
 
+    
     return 0;
 }
