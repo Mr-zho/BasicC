@@ -36,7 +36,7 @@ int main()
     printf("len: %d, sex = %c\n", len, sex);        /* %c就是打印字符 */
 #endif
 
-#if 1
+#if 0
     /* 有符号 */
     char sex = -1;
     int len = sizeof(sex);
@@ -169,6 +169,19 @@ int main()
         printf("not hello world\n");
     }
 #endif
+
+    /* 运算符: 双目运算符 & 三目运算符 */
+    /* 双目运算符 */
+
+    /* */
+    int num1 = 40;
+    int num2 = 30;
+
+    /* 三目运算符 */
+    int num3 = (num1 > num2) ? 100 : 666;
+    printf("num3:%d\n", num3);
+
+
 
     return 0;
 }
