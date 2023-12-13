@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "calculateFunc.h"
+#include "myString.h"
 
 /* 函数参数:可以没有 也可以有 */
 /* 函数返回值: 可以没有 也可以有。
@@ -10,8 +11,6 @@
 */
 
 /* 什么叫API: Application Programming Interface. */
-
-
 /* 函数的定义 */
 #if 0
 // case1: 没有参数，没有返回值
@@ -41,8 +40,6 @@ int myAddNum2(int num1, int num2)
     return sum;
 }
 #endif
-
-
 
 #if 0 
 /* 取别名 */
@@ -92,6 +89,17 @@ int main()
 
     int num4 = calculateDiv(num1, num2);
     printf("num4:%d\n", num4);
+
+/* */
+    char *ptr = NULL;        // 13  12  13  13  13   13
+    int len = 0;
+#if 0
+    len = strlen(ptr);
+#else
+    len = myStrlen(ptr);
+#endif
+    printf("len:%d\n", len);
+
 
     return 0;
 }
