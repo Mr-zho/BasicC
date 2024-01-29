@@ -1,10 +1,9 @@
 #include <stdio.h>
-
-/* */
-extern int myadd(int num1, int num2);
-extern int mysub(int num1, int num2);
-extern int mymul(int num1, int num2);
-extern int mydiv(int num1, int num2);
+#include "add.h"
+#include "sub.h"
+#include "mul.h"
+#include "div.h"
+#include <stdlib.h>
 
 int main()
 {
@@ -13,5 +12,11 @@ int main()
 
     int ret = myadd(num1, num2);
     printf("ret:%d\n", ret);
+
+    ret = mydiv(num1, num2);
+    printf("ret:%d\n", ret);
+
+
+
     return 0;
 }

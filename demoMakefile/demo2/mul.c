@@ -1,4 +1,4 @@
-
+#include "mul.h"
 
 int mymul(int num1, int num2)
 {

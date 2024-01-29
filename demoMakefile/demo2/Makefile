@@ -1,20 +1,29 @@
-main:main.o add.o sub.o mul.o div.o
-	gcc main.o add.o sub.o mul.o div.o -o main
+# 自定义变量
+# 变量赋值
+OBJ=$(patsubst %.c, %.o, $(wildcard ./*.c))
+TARGET=main
 
-add.o:add.c
-	gcc -c add.c -o add.o
+LDFALGS=-L./src_so -L./src_a
+LIBS=-lSoMyAdd -lMyDiv
 
-sub.o:sub.c
-	gcc -c sub.c -o sub.o
+# 使用$(TARGET) 必须要加 '$' 符号
+$(TARGET):$(OBJ)
+	$(CC) $^ $(LDFALGS) $(LIBS) -o $@
 
-mul.o:mul.c
-	gcc -c mul.c -o mul.o
+# 模式匹配
+%.o:%.c
+	$(CC) -c $^ -o $@
 
-div.o:div.c
-	gcc -c div.c -o div.o
+# 伪文件 / 伪目标
+.PHONY:	clean
 
-main.o:main.c
-	gcc -c main.c -o main.o
-
+# 清除编译出来的依赖文件 和 二进制文件
 clean:
-	@rm -rf *.o main
+	@$(RM) *.o $(TARGET)
+
+show:
+	@echo $(RM)
+	@echo $(CC)
+	@echo $(CXX)
+	@echo $(wildcard ./*.c)
+	@echo $(patsubst %.c, %.o, $(wildcard ./*.c))
